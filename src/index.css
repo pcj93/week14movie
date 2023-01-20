@@ -159,3 +159,23 @@ section {
 .popup .content .close:hover {
 	background: #223343;
 }
+
+
+/* to hide radio btn behind stars */
+.radio-btn{
+	display: none;
+}
+
+
+/* this is for the stars */
+.star{
+	cursor: pointer;
+	transition: color 200ms;
+}
+
+
+/* this is for the text under stars */
+.star-text{
+	font-size: 25px;
+	color:white;
+}

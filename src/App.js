@@ -4,6 +4,7 @@ import axios from 'axios'
 import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
+import StarRating from './components/StarRating'
 
 function App() {
   const [state, setState] = useState({
@@ -11,11 +12,15 @@ function App() {
     results: [],
     selected: {}
   });
-  const apiurl = "http://www.omdbapi.com/?i=tt3896198&apikey=7dab83b8";
+
+  const apiurl=`http://www.omdbapi.com/?apikey=7dab83b8&`
+
+ 
 
   const search = (e) => {
+    // console.log( 'what is this', e)
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" + state.s).then(({ data }) => {
+      axios(apiurl + "s=" + state.s).then(({ data }) => {
         let results = data.Search;
 
         setState(prevState => {
@@ -34,19 +39,23 @@ function App() {
   }
 
   const openPopup = id => {
-    axios(apiurl + "&id=" + id).then(({ data }) => {
+    // console.log('this is the id of the movie', id)
+    axios(apiurl + `i=` + id).then(({ data }) => {
       let result = data;
 
-      console.log(result);
+      console.log('this is the movie you are looking for',result);
 
       setState(prevState => {
+        console.log( 'you opened the popup',prevState)
         return { ...prevState, selected: result }
       });
     });
+
   }
 
   const closePopup = () => {
     setState(prevState => {
+      console.log( 'you closed the popup',prevState)
       return { ...prevState, selected: {} }
     });
   }
@@ -59,9 +68,10 @@ function App() {
       <main>
         <Search handleInput={handleInput} search={search} />
 
-        <Results results={state.results} openPopup={openPopup} />
+        <Results results={state.results} openPopup={openPopup} StarRating={StarRating}/>
 
-        {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
+        {(typeof state.selected.Title != "undefined") ? 
+        <Popup selected={state.selected} closePopup={closePopup} /> : false}
       </main>
     </div>
   );

@@ -1,4 +1,6 @@
 import React from 'react'
+import StarRating from './StarRating'
+
 
 function Popup({ selected, closePopup }) {
 	return (
@@ -9,6 +11,7 @@ function Popup({ selected, closePopup }) {
 				<div className="plot">
 					<img src={selected.Poster} />
 					<p>{selected.Plot}</p>
+					<StarRating/>
 				</div>
 				<button className="close" onClick={closePopup}>Close</button>
 			</div>
