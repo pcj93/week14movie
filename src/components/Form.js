@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = () => {
-  const [form, setForm] = useState({movie: '', review: '', id:uuidv4() })
-  const [reviews, setReviews] = useState([])
 
+const Form = ({form, reviews, setForm, setReviews}) => {
+  
   const handleChange= e => {
     const{name,value} = e.target
     setForm({...form, [name]: value})

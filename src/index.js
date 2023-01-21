@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import StarRating from './components/StarRating';
 import Form from './components/Form';
+import ReviewList from './components/ReviewList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

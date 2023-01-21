@@ -5,7 +5,11 @@ import Results from './components/Results'
 import Popup from './components/Popup'
 import StarRating from './components/StarRating'
 
+
+
+
 function App() {
+
   const [state, setState] = useState({
     s: "",
     results: [],

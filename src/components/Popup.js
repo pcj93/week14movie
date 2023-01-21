@@ -1,8 +1,15 @@
 import React from 'react'
 import StarRating from './StarRating'
 import Form from './Form'
+import ReviewList from './ReviewList'
+import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react'
 
-function Popup({ selected, closePopup }) {
+
+function Popup({ selected, closePopup}) {
+
+const [reviews, setReviews] = useState([])
+const [form, setForm] = useState({movie: '', review: '', id:uuidv4() })
 	return (
 		<section className="popup">
 			<div className="content">
@@ -12,7 +19,8 @@ function Popup({ selected, closePopup }) {
 					<img src={selected.Poster} />
 					<p>{selected.Plot}</p>
 					<StarRating/>
-					<Form/>
+					<Form form={form} reviews={reviews} setForm={setForm} setReviews={setReviews}/> 
+					<ReviewList reviews={reviews}/>
 				</div>
 				<button className="close" onClick={closePopup}>Close</button>
 			</div>
