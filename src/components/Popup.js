@@ -1,5 +1,7 @@
 import React from 'react'
 import StarRating from './StarRating'
+import Form from './Form'
+
 
 
 function Popup({ selected, closePopup }) {
@@ -12,6 +14,7 @@ function Popup({ selected, closePopup }) {
 					<img src={selected.Poster} />
 					<p>{selected.Plot}</p>
 					<StarRating/>
+					<Form/>
 				</div>
 				<button className="close" onClick={closePopup}>Close</button>
 			</div>

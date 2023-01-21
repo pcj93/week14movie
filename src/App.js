@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-
 import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
 import StarRating from './components/StarRating'
+import Form from './components/Form'
 
 function App() {
   const [state, setState] = useState({
@@ -72,6 +72,7 @@ function App() {
 
         {(typeof state.selected.Title != "undefined") ? 
         <Popup selected={state.selected} closePopup={closePopup} /> : false}
+
       </main>
     </div>
   );
