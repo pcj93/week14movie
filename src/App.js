@@ -4,7 +4,6 @@ import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
 import StarRating from './components/StarRating'
-import Form from './components/Form'
 
 function App() {
   const [state, setState] = useState({

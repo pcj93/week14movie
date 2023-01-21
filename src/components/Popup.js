@@ -2,8 +2,6 @@ import React from 'react'
 import StarRating from './StarRating'
 import Form from './Form'
 
-
-
 function Popup({ selected, closePopup }) {
 	return (
 		<section className="popup">
