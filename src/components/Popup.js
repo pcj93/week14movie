@@ -1,15 +1,17 @@
-import React from 'react'
-import StarRating from './StarRating'
-import Form from './Form'
-import ReviewList from './ReviewList'
+import React, {useState} from 'react';
+import StarRating from './StarRating';
+import Form from './Form';
+import ReviewList from './ReviewList';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'react'
+import ReviewItem from './ReviewItem';
 
 
 function Popup({ selected, closePopup}) {
 
-const [reviews, setReviews] = useState([])
-const [form, setForm] = useState({movie: '', review: '', id:uuidv4() })
+	const [reviews, setReviews] = useState([])
+	const [form, setForm] = useState({movie: '', review: '', id:uuidv4() })
+	const [editing, setEditing] = useState(false)
+
 	return (
 		<section className="popup">
 			<div className="content">
@@ -19,8 +21,8 @@ const [form, setForm] = useState({movie: '', review: '', id:uuidv4() })
 					<img src={selected.Poster} />
 					<p>{selected.Plot}</p>
 					<StarRating/>
-					<Form form={form} reviews={reviews} setForm={setForm} setReviews={setReviews}/> 
-					<ReviewList reviews={reviews}/>
+					<Form form={form} reviews={reviews} setForm={setForm} setReviews={setReviews} editing={editing} setEditing={setEditing}/> 
+					<ReviewList reviews={reviews} setReviews={setReviews} setEditing={setEditing} setForm={setForm}/>
 				</div>
 				<button className="close" onClick={closePopup}>Close</button>
 			</div>

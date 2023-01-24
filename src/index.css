@@ -178,3 +178,41 @@ section {
 	font-size: 25px;
 	color:white;
 }
+
+.form{
+	border: 1px solid #0d0d0d;
+	box-shadow: 1px 1px #0d0d0d, 2px 2px #0d0d0d;
+	padding: 1rem;
+	width: 20rem;
+}
+
+input,
+textarea,
+button{
+	display:block;
+	margin: .5rem auto auto;
+	padding: 0.25rem 0.5rem;
+}
+
+input,
+textarea {
+	width: calc(100% -1rem);
+
+}
+
+button{
+	border: 1px solid #0d0d0d;
+	cursor: pointer;
+}
+
+h1,h2,h3 {
+	margin: 0 0 1rem 0;
+}
+
+.reviewItem{
+	border: 1px solid #0d0d0d;
+	box-shadow: 1px 1 px #0d0d0d, 2px 2px #0d0d0d;
+	padding: 1rem;
+	width: 20rem;
+	margin-top: 1rem;
+}
